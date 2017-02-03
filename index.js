@@ -42,14 +42,16 @@ function init (arrOfCompanies) {
 }
 
 function rand (arrOfCompanies) {
-    var num = Math.random();
-    
+    // generate random number
+    var num = Math.random(); 
+    // choose a company in the range of the generated number.
     for (var i = 0; i < arrOfCompanies.length; i++) {
+        // if current company is the company with biggest rate then assign to it.
         if (i === arrOfCompanies.length - 1){
             arrOfCompanies[i].requests++;
             return;
         }
-
+        // if the generated number is in the range of this company rate assign to it.
         if (num <= arrOfCompanies[i].value) {
             arrOfCompanies[i].requests++;
             return;
